@@ -6,30 +6,30 @@ import 'package:water_tracker_flutter/screens/statistics_screen.dart';
 class MyNavigationButtonBar extends StatefulWidget {
   const MyNavigationButtonBar({super.key});
 
-  @override //create state
+  @override 
   State<StatefulWidget> createState() {
     return _MyFirstAppState();
   }
 }
 
 class _MyFirstAppState extends State<MyNavigationButtonBar> {
-int _selectedIndex = 0; // Индекс выбранного элемента
+int _selectedIndex = 0; 
 
-  // Список экранов
+
   final List<Widget> _screens = [
-    const InputScreen(), // Трекер
-    const SettingsScreen(), // Настройки
-    const StatisticsScreen(), // Статистика
+    const InputScreen(), 
+    const SettingsScreen(), 
+    const StatisticsScreen(), 
   ];
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index; // Обновляем индекс выбранного элемента
+      _selectedIndex = index; 
     });
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_selectedIndex], // Отображаем текущий экран
+      body: _screens[_selectedIndex], 
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.blue,
         items: const [
@@ -37,10 +37,10 @@ int _selectedIndex = 0; // Индекс выбранного элемента
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Настройки'),
           BottomNavigationBarItem(icon: Icon(Icons.insert_chart), label: 'Статистика'),
         ],
-        currentIndex: _selectedIndex, // Устанавливаем текущий индекс
-        onTap: _onItemTapped, // Обработчик нажатия
-        selectedItemColor: Colors.white, // Цвет текста для выбранного элемента
-        unselectedItemColor: Colors.white70, // Цвет текста для невыбранных элементов
+        currentIndex: _selectedIndex, 
+        onTap: _onItemTapped, 
+        selectedItemColor: Colors.white, 
+        unselectedItemColor: Colors.white70, 
       ),
     );
   }
